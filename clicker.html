@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>clicker</title>
+</head>
+
+<body>
+  <img id="lebron"
+    src="https://media.gq.com/photos/5942ce8fff7d4e0397e51d10/4:3/w_1632,h_1224,c_limit/lebron-james-hair.jpg">
+</body>
+<h1 id="score">
+    score = 0
+</h1>
+
+</html>
+<script>
+  document.getElementById("lebron").addEventListener("click", up)
+  var score = 0;
+  function up() {
+    score = score + 1
+    document.getElementById("score").innerHTML = score
+
+    console.log(score)
+  }
+</script>

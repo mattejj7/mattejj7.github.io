@@ -5,24 +5,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>clicker</title>
+  <style>
+    img{
+      width: 400px;
+    }
+  </style>
 </head>
 
 <body>
   <img id="lebron"
     src="https://media.gq.com/photos/5942ce8fff7d4e0397e51d10/4:3/w_1632,h_1224,c_limit/lebron-james-hair.jpg">
-</body>
-<h1 id="score">
+
+  <button id="upgrade" type="button">upgrade</button>
+  <h1 id="score">
     score = 0
-</h1>
+  </h1>
+</body>
 
 </html>
 <script>
   document.getElementById("lebron").addEventListener("click", up)
+  document.getElementById("upgrade").addEventListener("click", upgrade)
   var score = 0;
-  function up() {
-    score = score + 1
-    document.getElementById("score").innerHTML = score
+  var scorePerClick = 1
 
-    console.log(score)
+  function up() {
+    score = score + scorePerClick
+    document.getElementById("score").innerHTML = score
   }
+
+  function upgrade() {    
+    // if scorePerClick is greater than five make click worth 2 
+    if (score >= 5) {
+      scorePerClick = scorePerClick + 2  
+      score = score - 5
+    }d
+  }
+
 </script>

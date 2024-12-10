@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>bouncing box</title>
+  <style>
+    div {
+      width: 24px;
+      height: 30px;
+      background-color: red;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+  </div>
+</body>
+
+</html>
+<script>
+  var position = 10
+  var bounce 
+  var direction = 5
+  document.getElementById("box").addEventListener("click", moveBox)
+  setInterval(moveBox, 16)
+
+  function moveBox() {
+    // variable to move box over by 5 px when the box is clicked
+    document.getElementById("box").style.left = position + "px"
+    position = position + direction
+    // make a variable that bounces the box 
+    // make box bounce off side using if statement
+    if position >= 700 direction = position - 5
+  
+  }
+
+
+</script>

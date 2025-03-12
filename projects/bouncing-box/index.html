@@ -45,9 +45,13 @@
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			var position = 5; // Variable declarations below here
+			var positionX = 10
+			var points = 0
+			var speed = 10
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
+			moveBoxTo(positionX); // Moves the box to the x-position 300
 
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -76,9 +80,17 @@
 			turn it around! 
 			*/
 			function update() {
+				positionX = positionX + speed
 				moveBoxTo(positionX)
-			positionX = positionX + 10
-            };
+				if (positionX > boardWidth) {
+					// Code to reverse speed goes here
+					speed = -speed
+				}
+				if (positionX < 0) {
+					speed = -speed
+				}
+			}
+			;
 			// Moves the box to the x-position 300
 
 			/* 
@@ -87,7 +99,10 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-           positionX = 0
+				positionX = 0
+				points = points + 1; // Adds 1 to variableName
+				changeBoxText(points)
+				speed = 3 * points + 10; // Adds 3 to variableName
 
 			};
 
